@@ -2,35 +2,34 @@
  * Autor: Cristopher Alexis Zarate Valencia		*
  * Fecha de creación: 10 abr. 2023				*
  * Fecha de modificación: 10 abr. 2023			*
- * Descripción: Escribir un programa que pida al usuario un número entero y muestre por
-		pantalla si es un número primo o no.
+ * Descripción: Escribir un programa que solicite el ingreso de una cantidad indeterminada de
+		números mayores que 1, finalizando cuando se reciba un cero. Imprimir la
+		cantidad de números primos ingresados.
  ************************************************/
 package instrc_iterar;
 
 import java.util.Scanner;
 
 /**
- * @author labingsw07
+ * @author cristopher
  *
  */
-public class Ejercicio2 {
+public class Ejercicio6 {
 	public static void main(String[] args) {
+		int aux,n=0;
 		Scanner rd = new Scanner(System.in);
-		int num;
 		
+		System.out.println("ingresa números y finaliza con la insersión con un 0");
 		do {
-			System.out.println("ingrese el número");
-			num = rd.nextInt();
-			if(num<2)
-				System.out.println("Debe ser un número mayor que 1.");
-		}while (num<2);
+			aux = rd.nextInt();
+			if(aux == 0) {
+				break;
+			}else if(esPrimo(aux)) {
+				n++;
+			}			
+		}while(aux > 1);
 		
-		if(esPrimo(num)) {
-			System.out.println("Es primo");
-		}else {
-			System.out.println("No es primo");
-		}
-		
+		System.out.println("El número de números primos " + n);
 	}
 	
 	public static boolean esPrimo(int numero){

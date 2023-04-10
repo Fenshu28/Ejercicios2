@@ -23,9 +23,9 @@ public class Ejercicio3 {
 		
 		for (int i = 1,j=1; i <= n; i+=2,j++) {
 			if(j%2 == 0)
-				pi -= 4/i;
+				pi -= 4.0/i;
 			else
-				pi += 4/i;
+				pi += 4.0/i;
 		}
 		
 		System.out.println("PI es " + pi);
