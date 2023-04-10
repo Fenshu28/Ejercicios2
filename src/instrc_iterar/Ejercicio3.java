@@ -16,14 +16,19 @@ import java.util.Scanner;
 public class Ejercicio3 {
 	public static void main(String[] args) {
 		Scanner rd =  new Scanner(System.in);
-		int n,j=1;
+		double n,pi=0;
 		
 		System.out.println("Ingrese n ");
 		n = rd.nextInt();
 		
-		for (int i = 1; i <= n; i+=2,j++) {
-			
+		for (int i = 1,j=1; i <= n; i+=2,j++) {
+			if(j%2 == 0)
+				pi -= 4/i;
+			else
+				pi += 4/i;
 		}
+		
+		System.out.println("PI es " + pi);
 		
 	}
 }
