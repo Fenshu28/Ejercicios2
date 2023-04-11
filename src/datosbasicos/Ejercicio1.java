@@ -17,6 +17,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import prefabs.Interfaz1;
@@ -47,7 +48,8 @@ public class Ejercicio1 {
 			public void actionPerformed(ActionEvent e) {
 				Dialog dlg = new Dialog(win);
 				
-				lbTit2.setText(txtInput1.getText());
+				JOptionPane.showMessageDialog(null, "Total a pagar $" + 
+						(Float.parseFloat(txtInput1.getText())*Float.parseFloat(txtInput2.getText())));
 				
 			}
 		});

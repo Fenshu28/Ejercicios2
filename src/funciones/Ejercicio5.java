@@ -16,41 +16,62 @@ import java.util.Scanner;
  */
 public class Ejercicio5 {
 	static Scanner rd = new Scanner(System.in);
+	static int t = 0;
 	public static void main(String[] args) {
 		int n[] = new int[50];
 		leer(n);
 		
+		System.out.println("El número con la mayor suma de digitos es " + numDigMayor(n));
+		System.out.println("La cantidad de números con la suma de sus digitos menor a 10 es " + numDigMenorDiez(n));
 				
 	}
 	
-	public static int numMayorDiez(int n[]) {
-		int aux = 0, numMay = 0;
-		for (int i = 0; i < n.length; i++) {
-			if() {
-				
+	public static int numDigMenorDiez(int n[]) {
+		int aux = 0,numMen = 0;
+		for (int i = 0; i < t; i++) {
+			if(sumDig(n[i]) < 10) {
+				numMen = sumDig(n[i]);
+				aux ++;
 			}
 		}
-		
+		return aux;
+	}
+	
+	public static int numDigMayor(int n[]) {
+		int aux = 0,numMay = 0;
+		for (int i = 0; i < t; i++) {
+			if(sumDig(n[i]) > numMay) {
+				numMay = sumDig(n[i]);
+				aux = n[i];
+			}
+		}
+		return aux;
 	}
 	
 	public static int sumDig(int i) {
-		String s = String.valueOf(i);
+		String s = new String();
+		s = String.valueOf(i);
 		int val = 0;
 		
 		for (int j = 0; j < s.length(); j++) {
-			val += Integer.parseInt( s.substring(j-1,j) );
+			val += Integer.parseInt( s.substring(j,j+1) );
 		}
 		
 		return val;
 	}
 	
 	public static void leer(int n[]) {
-		int i = 0;
-		System.out.println("Ingresa el número: ");
+		
+		System.out.println("Ingresa los números ");
 		do {			
-			n[i] = rd.nextInt();
-			i++;
-		}while(n[i-1] <= 0);
+			n[t] = rd.nextInt();
+			t++;
+		}while(n[t-1] > 0);
+		t--;
 	}
 	
 }
+
+
+
+
